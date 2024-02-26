@@ -1,0 +1,25 @@
+{{#each notes}}
+    <div class="wrap-collapsible">
+        <input id="{{folder}}" class="toggle" type="checkbox">
+        <label for="{{folder}}" class="lbl-toggle folder">{{folder}}</label>
+        <div class="collapsible-content">
+        
+
+        {{#each note}}
+
+                
+                <div class="wrap-collabsible">
+                    <input id="{{this.id}}" class="toggle" type="checkbox">
+                    <label for="{{this.id}}" class="lbl-toggle note">{{this.name}}</label>
+                    <div class="collapsible-content">
+                        <div class="content-inner">
+                            <p>{{nl2br this.text}}</p>
+                        </div>
+                    </div>
+                </div>
+
+        {{/each}}
+
+        </div>
+    </div>
+{{/each}}
