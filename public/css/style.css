@@ -1,119 +1,74 @@
-input[type='checkbox'] {
-    display: none;
-  }
+:root {
+    --background:  rgb(25, 22, 33);
+    --hover: rgb(184, 184, 184);
+
+    --folder-bg: rgb(58, 81, 73);
+    --folder: rgb(237, 237, 237);
+    --folder-hover: rgb(184, 184, 184);
+    
+    --note-bg: rgb(103, 137, 126);
+    --note: rgb(10, 73, 67);
+    --note-hover: rgb(184, 184, 184);
+
+    --text-body-bg: rgba(60, 47, 82, 0.918);
+    --text-body: white;
+
+    --sidebar-bg: rgba(93, 92, 110, 0.292);
+    --sidebar-width: 20rem;
+
+    --href: rgb(10, 73, 67);
+    --href-hover: white;
+}
 
 body {
-  background-color: rgb(20, 17, 44);
+    background: var(--background);
 }
 
-.lbl-toggle {
-  display: block;
-  
-  font-weight: bold;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-transform: uppercase;
-  text-align: left;
-  
-  margin-top:.5rem;
-  cursor: pointer;
-  
-  border-radius: 7px;
-  transition: all 0.25s ease-out;
-}
-
-.lbl-toggle.folder {
-  font-size: 1.2rem;
-  padding: 1rem;
-  color: #ededed;
-  background: #007e54;
-}
-
-.lbl-toggle.note {
-  font-size: .9rem;
-  padding: .5rem;
-  color: #0a4943;
-  background: #67897e;
-
-}
-  
-.lbl-toggle:hover {
-  color: #b8b8b8;
-}
-
-.lbl-toggle::before {
-  content: ' ';
-  display: inline-block;
-  
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid currentColor;
-  
-  vertical-align: middle;
-  margin-right: .7rem;
+.title {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     
-  transform: translateY(-2px);
-  
-  transition: transform .2s ease-out;
-}
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: left;
 
-.collapsible-content .content-inner {
-  background: rgba(60, 47, 82, 0.918);
-  border-bottom: 1px solid rgba(20, 13, 61, 0.45);
-  
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  padding: .5rem 1rem;
-}
-
-.collapsible-content {
-  max-height: 0px;
-  overflow: auto;
-
-  color: white;
-  font-family: monospace;
-  font-size: .9rem;
-
-  transition: max-height .25s ease-in-out;
-}
-
-.toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: max-content;
-}
-
-.toggle:checked + .lbl-toggle::before {
-  transform: rotate(90deg) translateX(-3px);
+    margin-bottom: 0.5rem;
+    border-radius: 7px;
 }
   
-.toggle:checked + .lbl-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+.folder {
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: var(--folder);
+    background: var(--folder-bg);
 }
 
-
-/*############################*/
-/*########-# TOGGLE #-########*/
-/*############################*/
-
-
-.collapse-all-label {
-  display: block;
-  font-size: 1rem;
-  color: #007e54;
-  margin-top: 0.5rem;
-  cursor: pointer;
+.folder.sidebar {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+}
+  
+.note {
+    font-size: 0.9rem;
+    height: fit-content;
+    padding: 0.5rem;
+    color: var(--note);
+    background: var(--note-bg);
 }
 
-.collapse-all-label:hover {
-  color: #b8b8b8;
+.note.sidebar {
+    margin-left: 0.5rem;
+}
+  
+.note.href {
+    color: var(--href);
+    text-decoration: none;
+    transition: all 0.25s ease-out;
 }
 
-/* Adjust styles for the collapsed state */
-.collapse-all-toggle:not(:checked) ~ .lbl-toggle {
-  border-bottom-right-radius: 7px;
-  border-bottom-left-radius: 7px;
-}
-
-.collapse-all-toggle:checked ~ .lbl-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+.note.href:hover {
+    color: var(--href-hover);
 }

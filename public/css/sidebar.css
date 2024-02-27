@@ -1,0 +1,15 @@
+.sidebar-container {
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    background-image: linear-gradient(to right, var(--sidebar-bg), var(--background));
+    border-style: solid;
+    border-width: 0px;
+
+    position: fixed;
+    width: var(--sidebar-width);
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+}

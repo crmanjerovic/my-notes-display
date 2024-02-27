@@ -1,0 +1,46 @@
+input[type='checkbox'] {
+    display: none;
+}
+
+.dropdown:hover {
+  color: var(--hover);
+}
+
+.dropdown {
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+
+.dropdown::before {
+  content: ' ';
+  display: inline-block;
+  
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  
+  vertical-align: middle;
+  margin-right: 0.7rem;
+    
+  transform: translateY(-2px);
+  
+  transition: transform 0.2s ease-out;
+}
+
+.toggle:checked + .dropdown + .collapsible {
+  max-height: max-content;
+}
+
+.toggle:checked + .dropdown::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible {
+  max-height: 0px;
+  overflow: auto;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.collapsible.content-inner {
+  padding: 0.5rem 1rem;
+}

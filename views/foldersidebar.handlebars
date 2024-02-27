@@ -1,0 +1,21 @@
+<div class="sidebar-container">
+    {{#each notes}}
+        <div class="wrap-collapsible">
+            <input id="{{folder}}" class="toggle" type="checkbox">
+            <label for="{{folder}}" class="title folder sidebar dropdown">{{@index}} {{folder}}</label>
+            <div class="collapsible">
+
+            {{#each note}}
+
+                <div class="title note sidebar">
+                    <a class="note href" href="#{{this.id}}">
+                        {{this.name}}
+                    </a>
+                </div>
+
+            {{/each}}
+
+            </div>
+        </div>
+    {{/each}}
+</div>
